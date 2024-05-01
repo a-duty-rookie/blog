@@ -1,6 +1,4 @@
-# Contents
-
-[:contents]
+# 一致性と不偏性①
 
 ## 3行まとめ
 

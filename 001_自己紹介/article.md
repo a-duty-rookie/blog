@@ -1,6 +1,4 @@
-# Contents
-
-[:contents]
+# はじめに
 
 ## 3行まとめ
 
