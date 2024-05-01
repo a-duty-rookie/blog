@@ -1,5 +1,8 @@
 {
     "markdown.copyFiles.destination": {
         "/articles/*.md": "${documentDirName}/../images/articles/${documentBaseName}/"
+    },
+    "markdownlint.config": {
+        "MD034": false
     }
 }
