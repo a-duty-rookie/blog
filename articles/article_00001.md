@@ -1,6 +1,10 @@
-# Contents
-
-[:contents]
+---
+title: "はじめに"
+emoji: "🐷"
+type: "tech" # tech: 技術記事 / idea: アイデア
+topics: [自己紹介]
+published: true
+---
 
 ## 3行まとめ
 
