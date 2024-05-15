@@ -37,8 +37,6 @@ published_at: 2024-05-04 19:00
 ほら、子供の頃から**点を結んで絵を作るやる、アホほどやるじゃないですか？**
 **点を見つけると線を引きたくなる**のって、人間の本能だと思うんですよね。
 
-[挿絵]
-
 もちろんアカデミアだったり、企業研究者だってちゃんとリテラシを持った人であればそんなことはないとは思いますが、私の前職とかだと、ブワァっとある点の集合にもっともらしい線が引かれて、小数点以下４桁とかの数値を出して「**ゆるい相関があります**」とかっていうのが横行するわけです。
 エクセルでグラフを書いてちょちょいのちょい、とすると、モットモらしい線とモットモらしい式が出てくるんでね、なんかすごく頭がいいことを言っているような気になるんですよね[^2]。
 
@@ -83,7 +81,7 @@ SSR(\boldsymbol{\beta}) = \sum_{i=1}^{n} \epsilon_i^2(\boldsymbol{\beta}) = \sum
 \frac{d}{d\boldsymbol{\beta}} SSR(\boldsymbol{\beta})=0 \to \min SSR(\boldsymbol{\beta})
 $$
 
-この時の回帰式や、それによって描かれる直線を**回帰直線**[^5]と言ったりします。
+この時の回帰式やそれによって描かれる直線を**回帰直線**[^5]、回帰式の係数である$\boldsymbol{\beta}$を**回帰係数**と言ったりします。
 
 [^5]:回帰"直線"というとxとyのグラフにビシッと真っ直ぐな線が惹かれることを想定するかと思いますが、この線型回帰式の$X_{ip}$には、変数のn乗の値や対数、指数が入り得ることに注意してください。例えば、$y=ax^4+b$は、$(x,y)$平面上ではぐにゃぐにゃした曲線ですが、$(x^4,y)$平面上では直線になりますので、線型回帰だと捉えることができます。
 
@@ -104,7 +102,7 @@ $$
 そして「身長と牛乳摂取量は比例関係にあるはず」という仮説から$Y_i = \beta_1 + \beta_2 X_i + \epsilon_i$という式を立て、手持ちの$i$人分の観測値を使って、
 
 $$
-SSR(\beta_1,\beta_2) = \sum_{i=1}^{n} (y_i - \beta_1 - \beta_2 x_i)^2 \\
+SSR(\beta_1,\beta_2) = \sum_{i=1}^{n} (Y_i - \beta_1 - \beta_2 X_i)^2 \\
 \begin{align*}
 \left\{
     \begin{align*}
@@ -120,13 +118,13 @@ $$
 $$
 \begin{align*}
   \dfrac{\partial}{\partial \beta_1} SSR(\beta_1,\beta_2)
-    &= \sum_{i=1}^{n} -2(y_i - \beta_1 - \beta_2 x_i) \\
-    &= 2n\beta_1 + 2\beta_2 \sum_{i=1}^{n}x_i - 2\sum_{i=1}^{n}y_i \\
-    &= 2n (\beta_1 + \beta_2 \bar{x} - \bar{y}) \\
+    &= \sum_{i=1}^{n} -2(Y_i - \beta_1 - \beta_2 X_i) \\
+    &= 2n\beta_1 + 2\beta_2 \sum_{i=1}^{n}X_i - 2\sum_{i=1}^{n}Y_i \\
+    &= 2n (\beta_1 + \beta_2 \bar{X} - \bar{Y}) \\
   \dfrac{\partial}{\partial \beta_2} SSR(\beta_1,\beta_2)
-    &= \sum_{i=1}^{n} -2x_i(y_i - \beta_1 - \beta_2 x_i) \\
-    &= 2\beta_1\sum_{i=1}^{n}x_i + 2\beta_2 \sum_{i=1}^{n}x_i^2 - 2\sum_{i=1}^{n}x_iy_i \\
-    &= 2n (\beta_1\bar{x} + \beta_2 \bar{x^2} - \bar{xy}) \\
+    &= \sum_{i=1}^{n} -2X_i(Y_i - \beta_1 - \beta_2 X_i) \\
+    &= 2\beta_1\sum_{i=1}^{n}X_i + 2\beta_2 \sum_{i=1}^{n}X_i^2 - 2\sum_{i=1}^{n}X_iY_i \\
+    &= 2n (\beta_1\bar{X} + \beta_2 \bar{X^2} - \bar{XY}) \\
 \end{align*}
 $$
 
@@ -136,14 +134,14 @@ $$
 \begin{align*}
 \left\{
     \begin{align}
-    & \hat{\beta_1} + \hat{\beta_2} \bar{x} - \bar{y}= 0 &\\
-    & \hat{\beta_1}\bar{x} + \hat{\beta_2} \bar{x^2} - \bar{xy}= 0 &\\
+    & \hat{\beta_1} + \hat{\beta_2} \bar{X} - \bar{Y}= 0 &\\
+    & \hat{\beta_1}\bar{X} + \hat{\beta_2} \bar{X^2} - \bar{XY}= 0 &\\
     \end{align}
 \right.
 \end{align*} \\
 \begin{align*}
-  (1)から&\hat{\beta_1} = \bar{y} - \hat{\beta_2} \bar{x} \\
-  (2) - \bar{x} (1)から&\hat{\beta_2} = \frac{\bar{xy} - \bar{x}\bar{y}}{\bar{x^2} - \bar{x}^2}
+  (1)から&\hat{\beta_1} = \bar{Y} - \hat{\beta_2} \bar{X} \\
+  (2) - \bar{X} (1)から&\hat{\beta_2} = \frac{\bar{XY} - \bar{X}\bar{Y}}{\bar{X^2} - \bar{X}^2}
 \end{align*}
 $$
 
@@ -151,8 +149,8 @@ $$
 
 $$
 \begin{align*}
-V(x) &= \frac{\sum_{i=1}^{n} (x-\bar{x})^2}{n} = \bar{x^2} - \bar{x}^2 \\
-Cov(xy) &= \frac{\sum_{i=1}^{n} (x-\bar{x})(y-\bar{y})}{n} = \bar{xy} - \bar{x}\bar{y} \\
+V(X) &= \frac{\sum_{i=1}^{n} (X-\bar{X})^2}{n} = \bar{X^2} - \bar{X}^2 \\
+Cov(XY) &= \frac{\sum_{i=1}^{n} (X-\bar{X})(Y-\bar{Y})}{n} = \bar{XY} - \bar{X}\bar{Y} \\
 \end{align*}
 $$
 
@@ -162,10 +160,10 @@ $$
 
 $$
 \begin{align*}
-  \hat{\beta_2} &= \frac{\bar{xy} - \bar{x}\bar{y}}{\bar{x^2} - \bar{x}^2} \\
-    &= \frac{\sum_{i=1}^{n} (x-\bar{x})(y-\bar{y})}{\sum_{i=1}^{n} (x-\bar{x})^2} \\
-    &= \frac{Cov(xy)}{V(x)} \\
-  \hat{\beta_1} &= \bar{y} - \hat{\beta_2} \bar{x}
+  \hat{\beta_2} &= \frac{\bar{XY} - \bar{X}\bar{Y}}{\bar{X^2} - \bar{X}^2} \\
+    &= \frac{\sum_{i=1}^{n} (X_i-\bar{X})(Y_i-\bar{Y})}{\sum_{i=1}^{n} (X_i-\bar{X})^2} \\
+    &= \frac{Cov(XY)}{V(X)} \\
+  \hat{\beta_1} &= \bar{Y} - \hat{\beta_2} \bar{X}
 \end{align*}
 $$
 
@@ -178,7 +176,7 @@ $$
 相関係数は0.2で、弱いながらも相関はありそうですね。
 ところで、今算出した$\hat{\beta_1}$と$\hat{\beta_2}$は、たまたま調査で得られた120人分のデータから計算した値です。つまり神様が決めた**真実の$\beta_1$、$\beta_2$を点推定するための推定量[^7]**、と言うことですね。
 
-そうなると、前回議論した、**点推定が満たしておいてほしい2つの性質、一致性と不偏性**が気になってきます。もしも不偏性や一致性を満たしていなかったら、どんなにサンプルを増やしても、どれだけ調査を繰り返しても、真の$\beta_1$、$\beta_2$を推定することができなくなってしまうので困ってしまいます。
+そうなると、[前回](https://zenn.dev/a_duty_rookie/articles/article_00002_1)議論した、**点推定が満たしておいてほしい2つの性質、一致性と不偏性**が気になってきます。もしも不偏性や一致性を満たしていなかったら、どんなにサンプルを増やしても、どれだけ調査を繰り返しても、真の$\beta_1$、$\beta_2$を推定することができなくなってしまうので困ってしまいます。
 
 次回からはこのデータを使ってもう少し上記の点を考えていきたいと思います。
 
