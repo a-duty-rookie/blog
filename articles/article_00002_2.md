@@ -203,8 +203,21 @@ $$
 $$
 \displaystyle P(|\bar{X}-\mu|\geqq k\frac{\sigma}{n}) \leqq \frac{1}{k^2}
 \xrightarrow{n \to \infty}
-\displaystyle P(|\bar{X}-\mu|\geqq 0) \leqq \frac{1}{k^2}
+\displaystyle P(|\bar{X}-\mu| > 0) \leqq \frac{1}{k^2}
 $$
+
+:::message
+2024/5/16 修正
+
+$$
+＜元＞ \quad
+\displaystyle P(|\bar{X}-\mu|\geqq k\frac{\sigma}{n}) \leqq \frac{1}{k^2}
+\xrightarrow{n \to \infty}
+\displaystyle P(|\bar{X}-\mu| \geqq 0) \leqq \frac{1}{k^2}
+$$
+
+$n \to \infty$のとき、$\textstyle \frac{\sigma}{n} \to 0$ではありますが、$\textstyle \frac{\sigma}{n}$は$0$足り得ない、ということに注意をする必要がありました。そのため、$|\bar{X}-\mu|\geqq k\frac{\sigma}{n}>0$より、極限を取る際は不等号を外して$|\bar{X}-\mu|>0$としています。
+:::
 
 これは、**nが無限大だったら標本平均と母平均との差が０より大きくなる確率は$1/k^2$以下である**ということを示しています。
 そして、kは任意の正の整数でしたね？つまり右辺は任意の正の有理数を取ってよいことになりますので、実質的に、**nが無限大だったら標本平均と母平均との間に差が生じる可能性は限りなく０に近づく**ということになります。
