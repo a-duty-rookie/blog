@@ -4,7 +4,7 @@ emoji: "🐷"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [統計,線型回帰,最小二乗法]
 published: true
-published_at: 2024-05-19 19:00
+published_at: 2024-06-04 19:00
 ---
 
 ## 3行まとめ
