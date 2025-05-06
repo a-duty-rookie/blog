@@ -34,4 +34,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add mst_zenn_ideas.csv
-          git diff --cached --quiet || (git commit -m "🔄 Auto-sync: update mst_zenn_ideas.csv" && git push)
+          git diff --cached --quiet || git commit -m "🔄 Auto-sync: update mst_zenn_ideas.csv"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
