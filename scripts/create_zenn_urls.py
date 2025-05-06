@@ -15,7 +15,7 @@ for raw in df.iterrows():
     main_num = str(raw.article_num)
     sub_num = str(raw.article_sub_num)
     url_text = (
-        f"[article_{main_num:0>5}_{sub_num}]"
+        "[記事を見る]"
         f"(https://zenn.dev/a_duty_rookie/articles/article_{main_num:0>5}_{sub_num})"
     )
     if raw.status == "公開済":

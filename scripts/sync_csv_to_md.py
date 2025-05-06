@@ -23,13 +23,14 @@ df["status_id"] = df.status.apply(
 df = df.sort_values(["status_id", "article_num", "article_sub_num", "internal_key"])
 
 pub_df = df.loc[
-    (df.status_id == 4) & (~df.article_num.isna()) & (~df.article_sub_num.isna())
-].drop("status_id", axis=1)
+    (df.status_id == 4) & (~df.article_num.isna()) & (~df.article_sub_num.isna()),
+    ["title", "zenn_url"],
+]
 
 seeds_df = df.loc[
-    (~df.internal_key.isin(pub_df.internal_key)) & (df.status_id != 5)
-].drop("status_id", axis=1)
-
+    (~df.internal_key.isin(pub_df.internal_key)) & (df.status_id != 5),
+    ["title", "status"],
+]
 
 # --- markdownに挿入
 md_txt = README_PATH.read_text()
