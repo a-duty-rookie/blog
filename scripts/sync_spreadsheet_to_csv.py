@@ -1,5 +1,6 @@
 import json
 import os
+import time
 from pathlib import Path
 
 import gspread
@@ -27,7 +28,16 @@ credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_content, sco
 gc = gspread.authorize(credentials)
 
 # --- スプレシート読み込み ---
-worksheet = gc.open(SPREADSHEET_NAME).sheet1
+for i in range(3):
+    try:
+        worksheet = gc.open(SPREADSHEET_NAME).sheet1
+        break
+    except Exception as e:
+        print(f"[WARN] Attempt {i+1} failed: {e}")
+        time.sleep(10)
+else:
+    raise RuntimeError("Failed to open spreadsheet after 3 retries.")
+
 records = worksheet.get_all_records()
 spread_df = pd.DataFrame(records)
 
