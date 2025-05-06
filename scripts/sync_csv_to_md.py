@@ -20,16 +20,21 @@ df = pd.read_csv(MST_CSV_PATH)
 df["status_id"] = df.status.apply(
     lambda s: status_dict[s] if s in status_dict.keys() else 0
 )
-df = df.fillna("")
-df = df.sort_values(["status_id", "article_num", "article_sum_num", "internal_key"])
+df = df.sort_values(["status_id", "article_num", "article_sub_num", "internal_key"])
 
-pub_df = df.loc[df.status_id == 4].drop("status_id", axis=1)
-seeds_df = df.loc[df.status_id.between(1, 3, "both")].drop("status_id", axis=1)
+pub_df = df.loc[
+    (df.status_id == 4) & (~df.article_num.isna()) & (~df.article_sub_num.isna())
+].drop("status_id", axis=1)
+
+seeds_df = df.loc[
+    (~df.internal_key.isin(pub_df.internal_key)) & (df.status_id != 5)
+].drop("status_id", axis=1)
+
 
 # --- markdownに挿入
 md_txt = README_PATH.read_text()
 for df, symbol in zip([pub_df, seeds_df], ["PUB", "SEEDS"]):
-    md_tbl = df.to_markdown(index=False)  # tabulateインストール必須
+    md_tbl = df.fillna("").to_markdown(index=False)  # tabulateインストール必須
     md_txt = re.sub(
         pattern=f"<!-- BEGIN_{symbol}_TABLE -->.*<!-- END_{symbol}_TABLE -->",
         repl=(
