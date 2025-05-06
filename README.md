@@ -7,8 +7,15 @@
 ## 👣 公開記事一覧
 
 <!-- BEGIN_PUB_TABLE -->
-| internal_key   | article_num   | article_sum_num   | title   | category   | status   | zenn_url   | memo   |
-|----------------|---------------|-------------------|---------|------------|----------|------------|--------|
+| internal_key | article_num | article_sub_num | title                       | category | status | zenn_url                                                                   | memo         |
+| -----------: | ----------: | --------------: | :-------------------------- | :------- | :----- | :------------------------------------------------------------------------- | :----------- |
+|   1746541500 |           1 |               1 | はじめに                    | tech     | 公開済 | [article_00001_1](https://zenn.dev/a_duty_rookie/articles/article_00001_1) | 2025/5/6入力 |
+|   1746541600 |           2 |               1 | 一致性と不偏性①             | tech     | 公開済 | [article_00002_1](https://zenn.dev/a_duty_rookie/articles/article_00002_1) |              |
+|   1746541630 |           2 |               2 | 一致性と不偏性②             | tech     | 公開済 | [article_00002_2](https://zenn.dev/a_duty_rookie/articles/article_00002_2) |              |
+|   1746541700 |           2 |               3 | 一致性と不偏性③             | tech     | 公開済 | [article_00002_3](https://zenn.dev/a_duty_rookie/articles/article_00002_3) |              |
+|   1746541730 |           3 |               1 | 最小二乗法と仲良くなりたい① | tech     | 公開済 | [article_00003_1](https://zenn.dev/a_duty_rookie/articles/article_00003_1) |              |
+|   1746541800 |           3 |               2 | 最小二乗法と仲良くなりたい② | tech     | 公開済 | [article_00003_2](https://zenn.dev/a_duty_rookie/articles/article_00003_2) |              |
+|   1746541830 |           3 |               3 | 最小二乗法と仲良くなりたい③ | tech     | 公開済 | [article_00003_3](https://zenn.dev/a_duty_rookie/articles/article_00003_3) |              |
 <!-- END_PUB_TABLE -->
 
 ---
@@ -16,8 +23,8 @@
 ## 👣 ネタ一覧
 
 <!-- BEGIN_SEEDS_TABLE -->
-| internal_key   | article_num   | article_sum_num   | title   | category   | status   | zenn_url   | memo   |
-|----------------|---------------|-------------------|---------|------------|----------|------------|--------|
+| internal_key | article_num | article_sub_num | title | category | status | zenn_url | memo |
+| ------------ | ----------- | --------------- | ----- | -------- | ------ | -------- | ---- |
 <!-- END_SEEDS_TABLE -->
 
 ---
