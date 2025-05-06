@@ -6,4 +6,4 @@ internal_key,article_num,article_sub_num,title,category,status,zenn_url,memo
 1746541730,3.0,1,最小二乗法と仲良くなりたい①,tech,公開済,[記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00003_1),
 1746541800,3.0,2,最小二乗法と仲良くなりたい②,tech,公開済,[記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00003_2),
 1746541830,3.0,3,最小二乗法と仲良くなりたい③,tech,公開済,[記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00003_3),
-
+1746583765,,1,ブログネタの管理環境,tech,ネタ,,googleフォーム→スプシ→githubリポジトリのcsv→README.md
