@@ -7,15 +7,15 @@
 ## 👣 公開記事一覧
 
 <!-- BEGIN_PUB_TABLE -->
-| title                       | zenn_url                                                                   |
-|:----------------------------|:---------------------------------------------------------------------------|
-| はじめに                    | [article_00001_1](https://zenn.dev/a_duty_rookie/articles/article_00001_1) |
-| 一致性と不偏性①             | [article_00002_1](https://zenn.dev/a_duty_rookie/articles/article_00002_1) |
-| 一致性と不偏性②             | [article_00002_2](https://zenn.dev/a_duty_rookie/articles/article_00002_2) |
-| 一致性と不偏性③             | [article_00002_3](https://zenn.dev/a_duty_rookie/articles/article_00002_3) |
-| 最小二乗法と仲良くなりたい① | [article_00003_1](https://zenn.dev/a_duty_rookie/articles/article_00003_1) |
-| 最小二乗法と仲良くなりたい② | [article_00003_2](https://zenn.dev/a_duty_rookie/articles/article_00003_2) |
-| 最小二乗法と仲良くなりたい③ | [article_00003_3](https://zenn.dev/a_duty_rookie/articles/article_00003_3) |
+| title          | zenn_url                                                         |
+|:---------------|:-----------------------------------------------------------------|
+| はじめに           | [記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00001_1) |
+| 一致性と不偏性①       | [記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00002_1) |
+| 一致性と不偏性②       | [記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00002_2) |
+| 一致性と不偏性③       | [記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00002_3) |
+| 最小二乗法と仲良くなりたい① | [記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00003_1) |
+| 最小二乗法と仲良くなりたい② | [記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00003_2) |
+| 最小二乗法と仲良くなりたい③ | [記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00003_3) |
 <!-- END_PUB_TABLE -->
 
 ---
