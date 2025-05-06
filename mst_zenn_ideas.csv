@@ -7,3 +7,8 @@ internal_key,article_num,article_sub_num,title,category,status,zenn_url,memo
 1746541800,3.0,2,最小二乗法と仲良くなりたい②,tech,公開済,[記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00003_2),
 1746541830,3.0,3,最小二乗法と仲良くなりたい③,tech,公開済,[記事を見る](https://zenn.dev/a_duty_rookie/articles/article_00003_3),
 1746583765,,1,ブログネタの管理環境,tech,ネタ,,googleフォーム→スプシ→githubリポジトリのcsv→README.md
+1746585746,,1,初めてのpypi,tech,ネタ,,Mdtree作った話。リポジトリ構成(toml)、名前使えなかった話。mdtreeの宣伝
+1746585795,,1,PyMC入門(私が),tech,ネタ,,PyMC5系のドキュメントがないらしいので簡単なものから書いてみる
+1746585886,,1,データ解析のための統計モデリング入門/GLMの部分,tech,ネタ,,勉強会資料のドキュメント化
+1746585958,,1,データサイエンティストのベン図の話,idea,ネタ,,ベン図のデータサイエンス力ない人ってなんなん問題。ベン図にするから良くない
+1746586012,,1,時系列データの自己分散や自己相関関数の理解,tech,ネタ,,沖本本を参考に
