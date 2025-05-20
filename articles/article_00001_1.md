@@ -4,6 +4,7 @@ emoji: "🐷"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [自己紹介]
 published: true
+published_at: 2024-05-01 19:00
 slug: article-00001
 ---
 
